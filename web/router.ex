@@ -16,11 +16,14 @@ defmodule PhoenixBlog.Router do
   scope "/", PhoenixBlog do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    #get "/", PageController, :index
+    get "/", PostController, :index
+    resources "/posts", PostController
   end
 
   # Other scopes may use custom stacks.
   # scope "/api", PhoenixBlog do
   #   pipe_through :api
   # end
+
 end
